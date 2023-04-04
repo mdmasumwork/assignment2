@@ -17,16 +17,15 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun changeBackground(view: View) {
-        binding.mainLayout.setBackgroundColor(Color.parseColor(getRandomColor()))
+        binding.mainLayout.setBackgroundColor(Color.rgb(getRandomColor(), getRandomColor(), getRandomColor()))
     }
 
     fun changeButtonBackground(view: View) {
-        binding.imageButton.setBackgroundColor(Color.parseColor(getRandomColor()))
+        binding.imageButton.setBackgroundColor(Color.rgb(getRandomColor(), getRandomColor(), getRandomColor()))
     }
 
-    fun getRandomColor(): String {
-        var randomNumber: Int = (0..16777215).random()
-        var hexColorValue: String = "#${Integer.toHexString(randomNumber)}"
-        return hexColorValue
+    fun getRandomColor(): Int {
+        var randomNumber: Int = (0..256).random()
+        return randomNumber
     }
 }
